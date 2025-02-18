@@ -431,35 +431,37 @@ a:focus {
 }
 
 .gallery_section .row {
-  -webkit-box-align: stretch;
-  -ms-flex-align: stretch;
-  align-items: stretch;
+  display: flex;
+  flex-wrap: wrap;
+  margin: -7.5px; /* Adjust negative margin to counteract column padding */
+}
+
+.gallery_section .col-sm-6,
+.gallery_section .col-sm-8,
+.gallery_section .col-sm-4,
+.gallery_section .col-md-3,
+.gallery_section .col-md-6 {
+  padding: 7.5px; /* Adjust padding to control spacing between images */
 }
 
 .gallery_section .img-box {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   overflow: hidden;
   position: relative;
+  height: 100%;
 }
 
 .gallery_section .img-box img {
-  min-width: 100%;
-  min-height: 100%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures images cover the box without distortion */
 }
 
 .gallery_section .img-box a {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   position: absolute;
   opacity: 0;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
   justify-content: center;
   width: 55px;
   height: 55px;
@@ -467,9 +469,7 @@ a:focus {
   background-color: #e45441;
   top: 50%;
   left: 50%;
-  -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
-  -webkit-transition: opacity 0.2s;
   transition: opacity 0.2s;
   color: #ffffff;
   font-size: 24px;
@@ -483,14 +483,11 @@ a:focus {
   width: 100%;
   height: 100%;
   background: rgba(58, 63, 88, 0.85);
-  -webkit-transition: all 0.1s;
   transition: all 0.1s;
-  -webkit-transform: translateY(100%);
   transform: translateY(100%);
 }
 
 .gallery_section .img-box:hover::before {
-  -webkit-transform: translateY(0);
   transform: translateY(0);
 }
 
@@ -499,11 +496,7 @@ a:focus {
 }
 
 .gallery_section .btn-box {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
   justify-content: center;
   margin-top: 45px;
 }
@@ -515,13 +508,28 @@ a:focus {
   color: #ffffff;
   border-radius: 5px;
   border: 1px solid #e45441;
-  -webkit-transition: all 0.2s;
   transition: all 0.2s;
 }
 
 .gallery_section .btn-box a:hover {
   background-color: transparent;
   color: #e45441;
+}
+
+/* Responsive adjustments */
+@media (max-width: 767.98px) {
+  .gallery_section .row {
+    flex-direction: column; /* Stack images vertically on small devices */
+  }
+
+  .gallery_section .col-sm-6,
+  .gallery_section .col-sm-8,
+  .gallery_section .col-sm-4,
+  .gallery_section .col-md-3,
+  .gallery_section .col-md-6 {
+    width: 100%; /* Ensure full width on small devices */
+    padding: 7.5px 0; /* Adjust padding for stacked layout */
+  }
 }
 
 .service_section .box {
