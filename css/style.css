@@ -319,10 +319,11 @@ a:focus {
 }
 
 .slider_section .detail-box .inner_detail-box {
-  background-color: rgba(190, 185, 185, 0.8);
-  color: #151313;
+  background-color: rgba(103, 101, 101, 0.8);
+  color: #fcf6f6;
   padding: 45px;
   border-radius: 25px;
+  width: 100%;
 }
 
 .slider_section .detail-box h1 {
