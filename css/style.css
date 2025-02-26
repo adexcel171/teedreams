@@ -319,8 +319,8 @@ a:focus {
 }
 
 .slider_section .detail-box .inner_detail-box {
-  background-color: rgba(103, 101, 101, 0.8);
-  color: #fcf6f6;
+  background: #dad5d5;
+  color: #182a3e;
   padding: 45px;
   border-radius: 25px;
   width: 100%;
@@ -424,7 +424,7 @@ a:focus {
 }
 
 .gallery_section {
-  background-color: #f9f8f7;
+  background-color: #3a3f58;
 }
 
 .gallery_section .heading_container {
